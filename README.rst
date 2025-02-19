@@ -144,6 +144,7 @@ Reporting Security Issues
 
 Please do not report security issues in public. Please email security@openedx.org.
 
+
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/sanctions.svg
     :target: https://pypi.python.org/pypi/sanctions/
     :alt: PyPI
