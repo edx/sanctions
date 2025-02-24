@@ -10,6 +10,7 @@ Purpose
 Backend Django IDA for checking users against Specially Designated Nationals (SDN) - Treasury Department and Nonproliferation Sanctions (ISN) - State Department, as well as managing these sanctions hit records.
 This service also maintains a fallback copy that saves data from the Consolidated Screening List provided by the ITA, which is only utilized when our primary approach by calling the government's SDN API is not an option, due to an API outage/timeout.
 
+
 Getting Started
 ***************
 
