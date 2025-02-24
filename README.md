@@ -31,7 +31,7 @@
 | sanctions/apps/sanctions/apps.py                                                             |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/management/\_\_init\_\_.py                                          |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/management/commands/\_\_init\_\_.py                                 |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py |       57 |       10 |        8 |        2 |     82% |39-50, 82->exit, 84->89 |
+| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py |       57 |       10 |        8 |        1 |     83% |39-50, 84->89 |
 | sanctions/apps/sanctions/management/commands/tests/\_\_init\_\_.py                           |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0001\_initial.py                                         |       10 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0002\_rename\_fallback\_models.py                        |        5 |        0 |        0 |        0 |    100% |           |
@@ -43,7 +43,7 @@
 | sanctions/apps/sanctions/utils.py                                                            |       66 |       12 |       14 |        4 |     75% |33-43, 78, 104->109, 114-115, 180->187 |
 | sanctions/apps/sanctions/views.py                                                            |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/urls.py                                                                            |       10 |        0 |        0 |        0 |    100% |           |
-|                                                                                    **TOTAL** |  **442** |   **28** |   **46** |   **10** | **91%** |           |
+|                                                                                    **TOTAL** |  **442** |   **28** |   **46** |    **9** | **92%** |           |
 
 
 ## Setup coverage badge
