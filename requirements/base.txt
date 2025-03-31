@@ -26,7 +26,7 @@ coreapi==2.3.3
     #   openapi-codec
 coreschema==0.0.4
     # via coreapi
-cryptography==44.0.1
+cryptography==44.0.2
     # via
     #   pyjwt
     #   social-auth-core
@@ -34,7 +34,7 @@ defusedxml==0.7.1
     # via
     #   python3-openid
     #   social-auth-core
-django==4.2.19
+django==4.2.20
     # via
     #   -c requirements/common_constraints.txt
     #   -r requirements/base.in
@@ -66,7 +66,7 @@ django-waffle==4.2.0
     #   -r requirements/base.in
     #   edx-django-utils
     #   edx-drf-extensions
-djangorestframework==3.15.2
+djangorestframework==3.16.0
     # via
     #   -r requirements/base.in
     #   django-rest-swagger
@@ -80,14 +80,14 @@ edx-auth-backends==4.4.0
     # via -r requirements/base.in
 edx-django-release-util==1.4.0
     # via -r requirements/base.in
-edx-django-utils==7.1.0
+edx-django-utils==7.2.0
     # via
     #   -r requirements/base.in
     #   edx-drf-extensions
     #   edx-rest-api-client
 edx-drf-extensions==10.5.0
     # via -r requirements/base.in
-edx-opaque-keys==2.11.0
+edx-opaque-keys==2.12.0
     # via edx-drf-extensions
 edx-rest-api-client==6.1.0
     # via -r requirements/base.in
@@ -95,13 +95,13 @@ idna==3.10
     # via requests
 itypes==1.2.0
     # via coreapi
-jinja2==3.1.5
+jinja2==3.1.6
     # via coreschema
 markupsafe==3.0.2
     # via jinja2
 mysqlclient==2.2.7
     # via -r requirements/base.in
-newrelic==10.6.0
+newrelic==10.8.0
     # via edx-django-utils
 oauthlib==3.2.2
     # via
@@ -126,7 +126,7 @@ pyjwt[crypto]==2.10.1
     #   edx-drf-extensions
     #   edx-rest-api-client
     #   social-auth-core
-pymongo==4.11.1
+pymongo==4.11.3
     # via edx-opaque-keys
 pynacl==1.5.0
     # via edx-django-utils
@@ -134,7 +134,7 @@ python-dateutil==2.9.0.post0
     # via opsgenie-sdk
 python3-openid==3.2.0
     # via social-auth-core
-pytz==2025.1
+pytz==2025.2
     # via -r requirements/base.in
 pyyaml==6.0.2
     # via
@@ -150,7 +150,7 @@ requests==2.32.3
     #   social-auth-core
 requests-oauthlib==2.0.0
     # via social-auth-core
-responses==0.25.6
+responses==0.25.7
     # via -r requirements/base.in
 semantic-version==2.10.0
     # via edx-drf-extensions
@@ -170,7 +170,7 @@ social-auth-core==4.5.6
     #   social-auth-app-django
 sqlparse==0.5.3
     # via django
-stevedore==5.4.0
+stevedore==5.4.1
     # via
     #   edx-django-utils
     #   edx-opaque-keys
@@ -178,7 +178,7 @@ tenacity==9.0.0
     # via opsgenie-sdk
 testfixtures==8.3.0
     # via -r requirements/base.in
-typing-extensions==4.12.2
+typing-extensions==4.13.0
     # via edx-opaque-keys
 uritemplate==4.1.1
     # via coreapi
