@@ -19,6 +19,7 @@ jobs:
       # user_reviewers: ""
       team_reviewers: "revenue-squad"
       email_address: "sonic-team@2u.com"
+      python_version: "3.12"
       # send_success_notification: false
     secrets:
       requirements_bot_github_token: ${{ secrets.REQUIREMENTS_BOT_GITHUB_TOKEN }}
