@@ -6,7 +6,7 @@ import logging
 from django.conf import settings
 from django.http import JsonResponse
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
-from requests.exceptions import HTTPError, Timeout
+from requests.exceptions import RequestException
 from rest_framework import permissions, views
 
 from sanctions.apps.api_client.sdn_client import SDNClient
@@ -61,8 +61,8 @@ class SDNCheckView(views.APIView):
                 lms_user_id
             )
             sdn_check_response = sdn_check.search(lms_user_id, full_name, city, country)
-        except (HTTPError, Timeout) as e:
-            logger.info(
+        except RequestException as e:
+            logger.error(
                 'SDNCheckView: SDN API call received an error: %s.'
                 ' Calling sanctions checkSDNFallback function for user %s.',
                 str(e),

@@ -5,7 +5,7 @@ import json
 from unittest import mock
 
 from django.db.utils import OperationalError
-from requests.exceptions import HTTPError
+from requests.exceptions import RequestException
 from rest_framework.reverse import reverse
 
 from sanctions.apps.sanctions.models import SanctionsCheckFailure
@@ -36,7 +36,7 @@ class TestSDNCheckView(APITest):
     @mock.patch('sanctions.apps.api.v1.views.checkSDNFallback')
     @mock.patch('sanctions.apps.api_client.sdn_client.SDNClient.search')
     def test_sdn_check_search_fails_uses_fallback(self, mock_search, mock_fallback):
-        mock_search.side_effect = [HTTPError]
+        mock_search.side_effect = [RequestException]
         mock_fallback.return_value = 0
         self.set_jwt_cookie(self.user.id)
         response = self.client.post(
