@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Coverage for sanctions/apps/sanctions/management/commands/populate_sdn_fallback_data_and_metadata.py: 83%</title>
     <link rel="icon" sizes="32x32" href="favicon_32_cb_58284776.png">
-    <link rel="stylesheet" href="style_cb_8e611ae1.css" type="text/css">
+    <link rel="stylesheet" href="style_cb_6b508a39.css" type="text/css">
     <script src="coverage_html_cb_6fb7b396.js" defer></script>
 </head>
 <body class="pyfile">
@@ -66,8 +66,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="z_9249332cd5e9ec90_0001_initial_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.4">coverage.py v7.6.4</a>,
-            created at 2025-03-12 07:28 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.10.3">coverage.py v7.10.3</a>,
+            created at 2025-08-18 09:44 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -108,13 +108,13 @@
     <p class="pln"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">    <span class="key">def</span> <span class="nam">add_arguments</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">parser</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">        <span class="nam">parser</span><span class="op">.</span><span class="nam">add_argument</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">            <span class="str">'--threshold'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">            <span class="nam">metavar</span><span class="op">=</span><span class="str">'N'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t">            <span class="nam">action</span><span class="op">=</span><span class="str">'store'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">            <span class="nam">type</span><span class="op">=</span><span class="nam">float</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t">            <span class="nam">default</span><span class="op">=</span><span class="num">3</span><span class="op">,</span>  <span class="com"># typical size is > 4 MB; 3 MB would be unexpectedly low</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">            <span class="nam">help</span><span class="op">=</span><span class="str">'File size MB threshold, under which we will not import it. Use default if argument not specified'</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">            <span class="str">'--threshold'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">            <span class="nam">metavar</span><span class="op">=</span><span class="str">'N'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t">            <span class="nam">action</span><span class="op">=</span><span class="str">'store'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">            <span class="nam">type</span><span class="op">=</span><span class="nam">float</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t">            <span class="nam">default</span><span class="op">=</span><span class="num">3</span><span class="op">,</span>  <span class="com"># typical size is > 4 MB; 3 MB would be unexpectedly low</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">            <span class="nam">help</span><span class="op">=</span><span class="str">'File size MB threshold, under which we will not import it. Use default if argument not specified'</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t34" href="#t34">34</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t">    <span class="key">def</span> <span class="nam">_hit_opsgenie_heartbeat</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t">        <span class="str">"""</span>&nbsp;</span><span class="r"></span></p>
@@ -145,8 +145,8 @@
     <p class="run"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">                <span class="nam">status_code</span> <span class="op">=</span> <span class="nam">download</span><span class="op">.</span><span class="nam">status_code</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t">            <span class="key">except</span> <span class="nam">Timeout</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">                <span class="nam">logger</span><span class="op">.</span><span class="nam">warning</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">                    <span class="str">"Sanctions SDNFallback: DOWNLOAD FAILURE: Timeout occurred trying to download SDN CSV. "</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">                    <span class="str">"Timeout threshold (in seconds): %s"</span><span class="op">,</span> <span class="nam">timeout</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">                    <span class="str">"Sanctions SDNFallback: DOWNLOAD FAILURE: Timeout occurred trying to download SDN CSV. "</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">                    <span class="str">"Timeout threshold (in seconds): %s"</span><span class="op">,</span> <span class="nam">timeout</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t66" href="#t66">66</a></span><span class="t">                <span class="key">raise</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t67" href="#t67">67</a></span><span class="t">            <span class="key">except</span> <span class="nam">Exception</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t68" href="#t68">68</a></span><span class="t">                <span class="nam">logger</span><span class="op">.</span><span class="nam">exception</span><span class="op">(</span><span class="str">"Sanctions SDNFallback: DOWNLOAD FAILURE: Exception occurred: [%s]"</span><span class="op">,</span> <span class="nam">e</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -167,21 +167,21 @@
     <p class="run"><span class="n"><a id="t83" href="#t83">83</a></span><span class="t">                        <span class="nam">metadata_entry</span> <span class="op">=</span> <span class="nam">populate_sdn_fallback_data_and_metadata</span><span class="op">(</span><span class="nam">sdn_file_string</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="par run show_par"><span class="n"><a id="t84" href="#t84">84</a></span><span class="t">                        <span class="key">if</span> <span class="nam">metadata_entry</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">84&#x202F;&#x219B;&#x202F;89</span><span class="annotate long">line 84 didn't jump to line 89 because the condition on line 84 was always true</span></span></p>
     <p class="run"><span class="n"><a id="t85" href="#t85">85</a></span><span class="t">                            <span class="nam">logger</span><span class="op">.</span><span class="nam">info</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t86" href="#t86">86</a></span><span class="t">                                <span class="str">'Sanctions SDNFallback: IMPORT SUCCESS: Imported SDN CSV. Metadata id %s'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t87" href="#t87">87</a></span><span class="t">                                <span class="nam">metadata_entry</span><span class="op">.</span><span class="nam">id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t86" href="#t86">86</a></span><span class="t">                                <span class="str">'Sanctions SDNFallback: IMPORT SUCCESS: Imported SDN CSV. Metadata id %s'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t87" href="#t87">87</a></span><span class="t">                                <span class="nam">metadata_entry</span><span class="op">.</span><span class="nam">id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t88" href="#t88">88</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t89" href="#t89">89</a></span><span class="t">                        <span class="nam">logger</span><span class="op">.</span><span class="nam">info</span><span class="op">(</span><span class="str">'Sanctions SDNFallback: DOWNLOAD SUCCESS: Successfully downloaded the SDN CSV.'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t90" href="#t90">90</a></span><span class="t">                        <span class="nam">self</span><span class="op">.</span><span class="nam">stdout</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t91" href="#t91">91</a></span><span class="t">                            <span class="nam">self</span><span class="op">.</span><span class="nam">style</span><span class="op">.</span><span class="nam">SUCCESS</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t92" href="#t92">92</a></span><span class="t">                                <span class="str">"Sanctions SDNFallback: Imported SDN CSV into the SDNFallbackMetadata"</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t93" href="#t93">93</a></span><span class="t">                                <span class="str">" and SDNFallbackData models."</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t94" href="#t94">94</a></span><span class="t">                            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t95" href="#t95">95</a></span><span class="t">                        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t91" href="#t91">91</a></span><span class="t">                            <span class="nam">self</span><span class="op">.</span><span class="nam">style</span><span class="op">.</span><span class="nam">SUCCESS</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t92" href="#t92">92</a></span><span class="t">                                <span class="str">"Sanctions SDNFallback: Imported SDN CSV into the SDNFallbackMetadata"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t93" href="#t93">93</a></span><span class="t">                                <span class="str">" and SDNFallbackData models."</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t94" href="#t94">94</a></span><span class="t">                            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t95" href="#t95">95</a></span><span class="t">                        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t96" href="#t96">96</a></span><span class="t">                        <span class="nam">self</span><span class="op">.</span><span class="nam">_hit_opsgenie_heartbeat</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t97" href="#t97">97</a></span><span class="t">                <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t98" href="#t98">98</a></span><span class="t">                    <span class="nam">logger</span><span class="op">.</span><span class="nam">warning</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t99" href="#t99">99</a></span><span class="t">                        <span class="str">"Sanctions SDNFallback: DOWNLOAD FAILURE: file too small! "</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t100" href="#t100">100</a></span><span class="t">                        <span class="str">"(%f MB vs threshold of %s MB)"</span><span class="op">,</span> <span class="nam">file_size_in_MB</span><span class="op">,</span> <span class="nam">threshold</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t99" href="#t99">99</a></span><span class="t">                        <span class="str">"Sanctions SDNFallback: DOWNLOAD FAILURE: file too small! "</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run run2"><span class="n"><a id="t100" href="#t100">100</a></span><span class="t">                        <span class="str">"(%f MB vs threshold of %s MB)"</span><span class="op">,</span> <span class="nam">file_size_in_MB</span><span class="op">,</span> <span class="nam">threshold</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t101" href="#t101">101</a></span><span class="t">                    <span class="key">raise</span> <span class="nam">Exception</span><span class="op">(</span><span class="str">"CSV file download did not meet threshold given"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
@@ -191,8 +191,8 @@
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a class="nav" href="z_9249332cd5e9ec90_0001_initial_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.4">coverage.py v7.6.4</a>,
-            created at 2025-03-12 07:28 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.10.3">coverage.py v7.10.3</a>,
+            created at 2025-08-18 09:44 +0000
         </p>
     </div>
 </footer>
