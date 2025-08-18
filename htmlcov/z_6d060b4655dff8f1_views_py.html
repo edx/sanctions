@@ -67,7 +67,7 @@
             <a id="nextFileLink" class="nav" href="z_7b3740b2362ba159_sdn_client_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.10.3">coverage.py v7.10.3</a>,
-            created at 2025-08-18 10:15 +0000
+            created at 2025-08-18 12:43 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -90,7 +90,7 @@
     <p class="run"><span class="n"><a id="t6" href="#t6">6</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">conf</span> <span class="key">import</span> <span class="nam">settings</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t7" href="#t7">7</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">http</span> <span class="key">import</span> <span class="nam">JsonResponse</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t8" href="#t8">8</a></span><span class="t"><span class="key">from</span> <span class="nam">edx_rest_framework_extensions</span><span class="op">.</span><span class="nam">auth</span><span class="op">.</span><span class="nam">jwt</span><span class="op">.</span><span class="nam">authentication</span> <span class="key">import</span> <span class="nam">JwtAuthentication</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t"><span class="key">from</span> <span class="nam">requests</span><span class="op">.</span><span class="nam">exceptions</span> <span class="key">import</span> <span class="nam">HTTPError</span><span class="op">,</span> <span class="nam">Timeout</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t"><span class="key">from</span> <span class="nam">requests</span><span class="op">.</span><span class="nam">exceptions</span> <span class="key">import</span> <span class="nam">RequestException</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t10" href="#t10">10</a></span><span class="t"><span class="key">from</span> <span class="nam">rest_framework</span> <span class="key">import</span> <span class="nam">permissions</span><span class="op">,</span> <span class="nam">views</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t12" href="#t12">12</a></span><span class="t"><span class="key">from</span> <span class="nam">sanctions</span><span class="op">.</span><span class="nam">apps</span><span class="op">.</span><span class="nam">api_client</span><span class="op">.</span><span class="nam">sdn_client</span> <span class="key">import</span> <span class="nam">SDNClient</span>&nbsp;</span><span class="r"></span></p>
@@ -145,8 +145,8 @@
     <p class="run run2"><span class="n"><a id="t61" href="#t61">61</a></span><span class="t">                <span class="nam">lms_user_id</span>&nbsp;</span><span class="r"></span></p>
     <p class="run run2"><span class="n"><a id="t62" href="#t62">62</a></span><span class="t">            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t63" href="#t63">63</a></span><span class="t">            <span class="nam">sdn_check_response</span> <span class="op">=</span> <span class="nam">sdn_check</span><span class="op">.</span><span class="nam">search</span><span class="op">(</span><span class="nam">lms_user_id</span><span class="op">,</span> <span class="nam">full_name</span><span class="op">,</span> <span class="nam">city</span><span class="op">,</span> <span class="nam">country</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">        <span class="key">except</span> <span class="op">(</span><span class="nam">HTTPError</span><span class="op">,</span> <span class="nam">Timeout</span><span class="op">)</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">            <span class="nam">logger</span><span class="op">.</span><span class="nam">info</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t64" href="#t64">64</a></span><span class="t">        <span class="key">except</span> <span class="nam">RequestException</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t65" href="#t65">65</a></span><span class="t">            <span class="nam">logger</span><span class="op">.</span><span class="nam">error</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="run run2"><span class="n"><a id="t66" href="#t66">66</a></span><span class="t">                <span class="str">'SDNCheckView: SDN API call received an error: %s.'</span>&nbsp;</span><span class="r"></span></p>
     <p class="run run2"><span class="n"><a id="t67" href="#t67">67</a></span><span class="t">                <span class="str">' Calling sanctions checkSDNFallback function for user %s.'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="run run2"><span class="n"><a id="t68" href="#t68">68</a></span><span class="t">                <span class="nam">str</span><span class="op">(</span><span class="nam">e</span><span class="op">)</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
@@ -239,7 +239,7 @@
             <a class="nav" href="z_7b3740b2362ba159_sdn_client_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.10.3">coverage.py v7.10.3</a>,
-            created at 2025-08-18 10:15 +0000
+            created at 2025-08-18 12:43 +0000
         </p>
     </div>
 </footer>
