@@ -119,3 +119,32 @@ class TestSDNCheckView(APITest):
         assert response.json()['sanctions_check_failure_id'] is None
 
         assert SanctionsCheckFailure.objects.count() == 0
+
+    @mock.patch('sanctions.apps.api.v1.views.checkSDNFallback')
+    @mock.patch('sanctions.apps.api_client.sdn_client.SDNClient.search')
+    def test_sdn_check_accepts_request_without_city(
+        self,
+        mock_search,
+        mock_fallback,
+    ):
+        """Verify that omitting the optional city field still succeeds."""
+        mock_search.return_value = {'total': 0}
+        post_data = {
+            'lms_user_id': self.user.lms_user_id,
+            'full_name': 'Din Grogu',
+            'country': 'SW',
+            'system_identifier': 'a new django IDA'
+        }
+
+        self.set_jwt_cookie(self.user.id)
+        response = self.client.post(
+            self.url,
+            content_type='application/json',
+            data=json.dumps(post_data)
+        )
+
+        assert response.status_code == 200
+        assert response.json()['hit_count'] == 0
+        # city omitted, no sanctions record should be created when hit_count == 0
+        assert SanctionsCheckFailure.objects.count() == 0
+        mock_fallback.assert_not_called()
