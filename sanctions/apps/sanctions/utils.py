@@ -74,8 +74,11 @@ def process_text(text):
     Returns:
         text (set): processed text
     """
-    if len(text) == 0:
-        return ''
+    # If the input is empty or None, return an empty set so that downstream
+    # set operations such as ``issubset`` do not raise AttributeError while
+    # still behaving logically (an empty set is a subset of any other set).
+    if not text:
+        return set()
 
     # Make lowercase
     text = text.casefold()

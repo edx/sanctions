@@ -34,7 +34,7 @@ class SDNCheckView(views.APIView):
 
         # Make sure we have the values needed to carry out the request
         missing_args = []
-        for expected_arg in ['lms_user_id', 'full_name', 'city', 'country']:
+        for expected_arg in ['lms_user_id', 'full_name', 'country']:
             if not payload.get(expected_arg):
                 missing_args.append(expected_arg)
         if missing_args:
@@ -45,7 +45,9 @@ class SDNCheckView(views.APIView):
 
         lms_user_id = payload.get('lms_user_id')
         full_name = payload.get('full_name')
-        city = payload.get('city')
+        # The city field is optional. Default to an empty string if not provided so that
+        # downstream checks and SDN API calls continue to work without additional guards.
+        city = payload.get('city', '')
         country = payload.get('country')
         sdn_api_list = settings.SDN_CHECK_API_LIST
 
