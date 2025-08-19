@@ -36,6 +36,13 @@ def checkSDNFallback(name, city, country):
     )
     records = records.filter(countries__contains=country)
     processed_name, processed_city = process_text(name), process_text(city)
+
+    # NOTE: If ``city`` is an empty string it becomes an empty set after
+    # processing.  Because an empty set is considered a subset of any other
+    # set, the address comparison below will automatically evaluate ``True``.
+    # As a result the fallback check ignores city filtering and will match any
+    # record whose name matches.
+
     for record in records:
         record_names, record_addresses = set(record.names.split()), set(record.addresses.split())
         if (processed_name.issubset(record_names) and processed_city.issubset(record_addresses)):
