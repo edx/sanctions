@@ -145,3 +145,30 @@ class TestSDNCheckView(APITest):
         # city omitted, no sanctions record should be created when hit_count == 0
         assert SanctionsCheckFailure.objects.count() == 0
         mock_fallback.assert_not_called()
+
+    @mock.patch('sanctions.apps.api.v1.views.checkSDNFallback')
+    @mock.patch('sanctions.apps.api_client.sdn_client.SDNClient.search')
+    def test_sdn_check_accepts_request_with_empty_city(
+        self,
+        mock_search,
+        mock_fallback,
+    ):
+        """Verify that sending an empty string for city still succeeds."""
+        mock_search.return_value = {'total': 0}
+
+        # Use the default payload but set city to an empty string to simulate
+        # clients that populate the field but have no value.
+        self.post_data['city'] = ''
+
+        self.set_jwt_cookie(self.user.id)
+        response = self.client.post(
+            self.url,
+            content_type='application/json',
+            data=json.dumps(self.post_data)
+        )
+
+        assert response.status_code == 200
+        assert response.json()['hit_count'] == 0
+        # empty city should not trigger fallback when hit_count == 0
+        assert SanctionsCheckFailure.objects.count() == 0
+        mock_fallback.assert_not_called()
