@@ -129,18 +129,15 @@ class TestSDNCheckView(APITest):
     ):
         """Verify that omitting the optional city field still succeeds."""
         mock_search.return_value = {'total': 0}
-        post_data = {
-            'lms_user_id': self.user.lms_user_id,
-            'full_name': 'Din Grogu',
-            'country': 'SW',
-            'system_identifier': 'a new django IDA'
-        }
+
+        # Re-use the default payload created in setUp but remove the city field.
+        self.post_data.pop('city')  # city is optional
 
         self.set_jwt_cookie(self.user.id)
         response = self.client.post(
             self.url,
             content_type='application/json',
-            data=json.dumps(post_data)
+            data=json.dumps(self.post_data)
         )
 
         assert response.status_code == 200
