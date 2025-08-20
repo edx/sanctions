@@ -15,7 +15,7 @@
 | sanctions/apps/api/v1/tests/\_\_init\_\_.py                                                  |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/api/v1/urls.py                                                                |        6 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/api/v1/views.py                                                               |       51 |        0 |        8 |        0 |    100% |           |
-| sanctions/apps/api\_client/sdn\_client.py                                                    |       25 |        2 |        2 |        1 |     89% |     73-78 |
+| sanctions/apps/api\_client/sdn\_client.py                                                    |       27 |        2 |        4 |        1 |     90% |     82-87 |
 | sanctions/apps/api\_client/tests/\_\_init\_\_.py                                             |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/core/\_\_init\_\_.py                                                          |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/core/constants.py                                                             |        3 |        0 |        0 |        0 |    100% |           |
@@ -40,10 +40,10 @@
 | sanctions/apps/sanctions/models.py                                                           |       86 |        3 |       10 |        3 |     94% |106->116, 107-112, 170->172 |
 | sanctions/apps/sanctions/tests/\_\_init\_\_.py                                               |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/tests/factories.py                                                  |       21 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/utils.py                                                            |       66 |       12 |       14 |        4 |     75% |33-43, 78, 104->109, 114-115, 180->187 |
+| sanctions/apps/sanctions/utils.py                                                            |       66 |       12 |       14 |        4 |     75% |33-50, 88, 114->119, 124-125, 190->197 |
 | sanctions/apps/sanctions/views.py                                                            |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/urls.py                                                                            |       10 |        0 |        0 |        0 |    100% |           |
-|                                                                                    **TOTAL** |  **442** |   **28** |   **46** |    **9** | **92%** |           |
+|                                                                                    **TOTAL** |  **444** |   **28** |   **48** |    **9** | **92%** |           |
 
 
 ## Setup coverage badge
