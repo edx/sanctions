@@ -108,7 +108,7 @@ Example of making a POST request to the `api/v1/sdn-check/` endpoint:
           'lms_user_id': user.lms_user_id,
           'username': user.username, # optional
           'full_name': full_name,
-          'city': city,
+          'city': city, # optional
           'country': country,
           'metadata': { # optional, any key/value can be added
               'order_identifer': 'EDX-123456',

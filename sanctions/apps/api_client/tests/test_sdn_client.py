@@ -91,3 +91,33 @@ class TestSDNClient(TestCase):
         self.mock_sdn_api_response(json.dumps(sdn_response), status_code=200)
         response = self.sdn_api_client.search(self.lms_user_id, self.name, self.city, self.country)
         assert response == sdn_response
+
+    @responses.activate
+    def test_sdn_search_success_no_city(self):
+        """Verify that when city is empty, the client omits the city query parameter."""
+        sdn_response = {'total': 2}
+
+        # Build expected URL without the city param
+        params_dict = {
+            'sources': self.sdn_api_list,
+            'type': 'individual',
+            'name': str(self.name).encode('utf-8'),
+            'countries': self.country,
+        }
+        params = urlencode(params_dict)
+        sdn_check_url = f'{self.sdn_api_url}?{params}'
+        auth_header = {'subscription-key': f'{self.sdn_api_key}'}
+
+        responses.add(
+            responses.GET,
+            sdn_check_url,
+            headers=auth_header,
+            status=200,
+            body=json.dumps(sdn_response),
+            content_type='application/json',
+        )
+
+        response = self.sdn_api_client.search(self.lms_user_id, self.name, '', self.country)
+        assert response == sdn_response
+        # Ensure the mocked endpoint was called exactly once
+        assert len(responses.calls) == 1

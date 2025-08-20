@@ -36,15 +36,24 @@ class SDNClient:
         Returns:
         dict: SDN API response.
         """
+        # Build the query-string parameters expected by the Trade.gov API. The
+        # "city" field has become optional for the sanctions service. When the
+        # caller provides an empty string we omit the parameter entirely to
+        # broaden the search (an empty value can produce unexpected filtering
+        # on the API side).
         params_dict = {
             'sources': self.sdn_api_list,
             'type': 'individual',
             'name': str(name).encode('utf-8'),
+            'countries': country,
+        }
+
+        # Only include the city parameter if one was supplied
+        if city:
             # We are using the city as the address parameter value as indicated in the documentation:
             # https://internationaltradeadministration.github.io/developerportal/consolidated-screening-list.html
-            'city': str(city).encode('utf-8'),
-            'countries': country
-        }
+            params_dict['city'] = str(city).encode('utf-8')
+
         params = urlencode(params_dict)
         sdn_check_url = '{api_url}?{params}'.format(
             api_url=self.sdn_api_url,
