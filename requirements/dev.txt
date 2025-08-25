@@ -72,7 +72,7 @@ coreschema==0.0.4
     # via
     #   -r requirements/validation.txt
     #   coreapi
-coverage[toml]==7.10.4
+coverage[toml]==7.10.5
     # via
     #   -r requirements/validation.txt
     #   pytest-cov
@@ -224,7 +224,7 @@ jaraco-context==6.0.1
     # via
     #   -r requirements/validation.txt
     #   keyring
-jaraco-functools==4.2.1
+jaraco-functools==4.3.0
     # via
     #   -r requirements/validation.txt
     #   keyring
@@ -243,7 +243,7 @@ keyring==25.6.0
     # via
     #   -r requirements/validation.txt
     #   twine
-lxml[html-clean]==6.0.0
+lxml[html-clean]==6.0.1
     # via
     #   edx-i18n-tools
     #   lxml-html-clean
@@ -300,7 +300,7 @@ packaging==25.0
     #   twine
 path==16.16.0
     # via edx-i18n-tools
-pbr==7.0.0
+pbr==7.0.1
     # via
     #   -r requirements/validation.txt
     #   stevedore
@@ -370,7 +370,7 @@ pylint-plugin-utils==0.9.0
     #   -r requirements/validation.txt
     #   pylint-celery
     #   pylint-django
-pymongo==4.14.0
+pymongo==4.14.1
     # via
     #   -r requirements/validation.txt
     #   edx-opaque-keys
@@ -421,7 +421,7 @@ readme-renderer==44.0
     # via
     #   -r requirements/validation.txt
     #   twine
-requests==2.32.4
+requests==2.32.5
     # via
     #   -r requirements/validation.txt
     #   coreapi
