@@ -2,48 +2,49 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/edx/sanctions/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                                                                                         |    Stmts |     Miss |   Branch |   BrPart |   Cover |   Missing |
-|--------------------------------------------------------------------------------------------- | -------: | -------: | -------: | -------: | ------: | --------: |
-| sanctions/\_\_init\_\_.py                                                                    |        1 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/\_\_init\_\_.py                                                               |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/\_\_init\_\_.py                                                           |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/models.py                                                                 |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/serializers.py                                                            |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/tests/\_\_init\_\_.py                                                     |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/urls.py                                                                   |        4 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/v1/\_\_init\_\_.py                                                        |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/v1/tests/\_\_init\_\_.py                                                  |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/v1/urls.py                                                                |        6 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/api/v1/views.py                                                               |       51 |        0 |        8 |        0 |    100% |           |
-| sanctions/apps/api\_client/sdn\_client.py                                                    |       27 |        2 |        4 |        1 |     90% |     82-87 |
-| sanctions/apps/api\_client/tests/\_\_init\_\_.py                                             |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/\_\_init\_\_.py                                                          |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/constants.py                                                             |        3 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/context\_processors.py                                                   |        3 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/migrations/0001\_initial.py                                              |        8 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/migrations/0002\_auto\_20231018\_1919.py                                 |        4 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/migrations/0003\_user\_full\_name.py                                     |        4 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/migrations/\_\_init\_\_.py                                               |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/models.py                                                                |       21 |        1 |        0 |        0 |     95% |        36 |
-| sanctions/apps/core/tests/\_\_init\_\_.py                                                    |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/tests/factories.py                                                       |       15 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/core/views.py                                                                 |       38 |        0 |        4 |        0 |    100% |           |
-| sanctions/apps/sanctions/apps.py                                                             |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/management/\_\_init\_\_.py                                          |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/management/commands/\_\_init\_\_.py                                 |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py |       57 |       10 |        8 |        1 |     83% |39-50, 84->89 |
-| sanctions/apps/sanctions/management/commands/tests/\_\_init\_\_.py                           |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/migrations/0001\_initial.py                                         |       10 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/migrations/0002\_rename\_fallback\_models.py                        |        5 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/migrations/0003\_auto\_20231109\_2121.py                            |        4 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/migrations/\_\_init\_\_.py                                          |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/models.py                                                           |       86 |        3 |       10 |        3 |     94% |106->116, 107-112, 170->172 |
-| sanctions/apps/sanctions/tests/\_\_init\_\_.py                                               |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/tests/factories.py                                                  |       21 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/utils.py                                                            |       66 |       12 |       14 |        4 |     75% |33-50, 88, 114->119, 124-125, 190->197 |
-| sanctions/apps/sanctions/views.py                                                            |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/urls.py                                                                            |       10 |        0 |        0 |        0 |    100% |           |
-|                                                                                    **TOTAL** |  **444** |   **28** |   **48** |    **9** | **92%** |           |
+| Name                                                                                                    |    Stmts |     Miss |   Branch |   BrPart |   Cover |   Missing |
+|-------------------------------------------------------------------------------------------------------- | -------: | -------: | -------: | -------: | ------: | --------: |
+| sanctions/\_\_init\_\_.py                                                                               |        1 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/\_\_init\_\_.py                                                                          |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/\_\_init\_\_.py                                                                      |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/models.py                                                                            |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/serializers.py                                                                       |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/tests/\_\_init\_\_.py                                                                |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/urls.py                                                                              |        4 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/v1/\_\_init\_\_.py                                                                   |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/v1/tests/\_\_init\_\_.py                                                             |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/v1/urls.py                                                                           |        6 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/api/v1/views.py                                                                          |       51 |        0 |        8 |        0 |    100% |           |
+| sanctions/apps/api\_client/sdn\_client.py                                                               |       27 |        2 |        4 |        1 |     90% |     82-87 |
+| sanctions/apps/api\_client/tests/\_\_init\_\_.py                                                        |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/\_\_init\_\_.py                                                                     |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/constants.py                                                                        |        3 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/context\_processors.py                                                              |        3 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/migrations/0001\_initial.py                                                         |        8 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/migrations/0002\_auto\_20231018\_1919.py                                            |        4 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/migrations/0003\_user\_full\_name.py                                                |        4 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/migrations/\_\_init\_\_.py                                                          |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/models.py                                                                           |       21 |        1 |        0 |        0 |     95% |        36 |
+| sanctions/apps/core/tests/\_\_init\_\_.py                                                               |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/tests/factories.py                                                                  |       15 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/core/views.py                                                                            |       38 |        0 |        4 |        0 |    100% |           |
+| sanctions/apps/sanctions/apps.py                                                                        |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/management/\_\_init\_\_.py                                                     |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/management/commands/\_\_init\_\_.py                                            |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py            |       57 |       10 |        8 |        1 |     83% |39-50, 84->89 |
+| sanctions/apps/sanctions/management/commands/tests/\_\_init\_\_.py                                      |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/migrations/0001\_initial.py                                                    |       10 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/migrations/0002\_rename\_fallback\_models.py                                   |        5 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/migrations/0003\_auto\_20231109\_2121.py                                       |        4 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/migrations/0004\_alter\_historicalsanctionscheckfailure\_options\_and\_more.py |        4 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/migrations/\_\_init\_\_.py                                                     |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/models.py                                                                      |       86 |        3 |       10 |        3 |     94% |106->116, 107-112, 170->172 |
+| sanctions/apps/sanctions/tests/\_\_init\_\_.py                                                          |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/tests/factories.py                                                             |       21 |        0 |        0 |        0 |    100% |           |
+| sanctions/apps/sanctions/utils.py                                                                       |       66 |       12 |       14 |        4 |     75% |33-50, 88, 114->119, 124-125, 190->197 |
+| sanctions/apps/sanctions/views.py                                                                       |        0 |        0 |        0 |        0 |    100% |           |
+| sanctions/urls.py                                                                                       |       10 |        0 |        0 |        0 |    100% |           |
+|                                                                                               **TOTAL** |  **448** |   **28** |   **48** |    **9** | **92%** |           |
 
 
 ## Setup coverage badge
