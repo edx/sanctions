@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-coverage==7.10.4
+coverage==7.10.6
     # via -r requirements/ci.in
 distlib==0.4.0
     # via virtualenv
@@ -16,7 +16,7 @@ packaging==25.0
     # via
     #   pyproject-api
     #   tox
-platformdirs==4.3.8
+platformdirs==4.4.0
     # via
     #   tox
     #   virtualenv
