@@ -12,7 +12,7 @@ certifi==2025.8.3
     # via
     #   opsgenie-sdk
     #   requests
-cffi==1.17.1
+cffi==2.0.0
     # via
     #   cryptography
     #   pynacl
@@ -30,7 +30,7 @@ coreapi==2.3.3
     #   openapi-codec
 coreschema==0.0.4
     # via coreapi
-cryptography==45.0.6
+cryptography==45.0.7
     # via
     #   pyjwt
     #   social-auth-core
@@ -38,7 +38,7 @@ defusedxml==0.7.1
     # via
     #   python3-openid
     #   social-auth-core
-django==4.2.23
+django==4.2.24
     # via
     #   -c requirements/common_constraints.txt
     #   -r requirements/base.in
@@ -55,7 +55,7 @@ django==4.2.23
     #   edx-drf-extensions
     #   edx-toggles
     #   social-auth-app-django
-django-cors-headers==4.7.0
+django-cors-headers==4.8.0
     # via -r requirements/base.in
 django-crum==0.7.9
     # via
@@ -122,13 +122,11 @@ openapi-codec==1.3.2
     # via django-rest-swagger
 opsgenie-sdk==2.1.5
     # via -r requirements/base.in
-pbr==7.0.0
-    # via stevedore
 psutil==7.0.0
     # via edx-django-utils
 pycountry==24.6.1
     # via -r requirements/base.in
-pycparser==2.22
+pycparser==2.23
     # via cffi
 pyjwt[crypto]==2.10.1
     # via
@@ -139,7 +137,7 @@ pyjwt[crypto]==2.10.1
     #   social-auth-core
 pymongo==4.14.0
     # via edx-opaque-keys
-pynacl==1.5.0
+pynacl==1.6.0
     # via edx-django-utils
 python-dateutil==2.9.0.post0
     # via opsgenie-sdk
@@ -154,7 +152,7 @@ pyyaml==6.0.2
     #   code-annotations
     #   edx-django-release-util
     #   responses
-requests==2.32.4
+requests==2.32.5
     # via
     #   coreapi
     #   edx-drf-extensions
@@ -184,7 +182,7 @@ social-auth-core==4.7.0
     #   social-auth-app-django
 sqlparse==0.5.3
     # via django
-stevedore==5.4.1
+stevedore==5.5.0
     # via
     #   code-annotations
     #   edx-django-utils
@@ -195,7 +193,7 @@ testfixtures==9.1.0
     # via -r requirements/base.in
 text-unidecode==1.3
     # via python-slugify
-typing-extensions==4.14.1
+typing-extensions==4.15.0
     # via edx-opaque-keys
 uritemplate==4.2.0
     # via coreapi
