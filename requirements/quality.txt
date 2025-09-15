@@ -73,6 +73,7 @@ cryptography==45.0.7
     # via
     #   -r requirements/test.txt
     #   pyjwt
+    #   secretstorage
     #   social-auth-core
 ddt==1.7.2
     # via -r requirements/test.txt
@@ -133,7 +134,7 @@ djangorestframework==3.16.1
     #   django-rest-swagger
     #   drf-jwt
     #   edx-drf-extensions
-dnspython==2.7.0
+dnspython==2.8.0
     # via
     #   -r requirements/test.txt
     #   pymongo
@@ -206,6 +207,10 @@ jaraco-context==6.0.1
     # via keyring
 jaraco-functools==4.3.0
     # via keyring
+jeepney==0.9.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.1.6
     # via
     #   -r requirements/test.txt
@@ -313,7 +318,7 @@ pylint-plugin-utils==0.9.0
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pymongo==4.14.0
+pymongo==4.15.0
     # via
     #   -r requirements/test.txt
     #   edx-opaque-keys
@@ -380,6 +385,8 @@ rfc3986==2.0.0
     # via twine
 rich==14.1.0
     # via twine
+secretstorage==3.4.0
+    # via keyring
 semantic-version==2.10.0
     # via
     #   -r requirements/test.txt
