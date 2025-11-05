@@ -10,3 +10,8 @@
 
 # Common constraints for edx repos
 -c common_constraints.txt
+
+# social-auth-app-django>=5.5.0 requires Django>=5.1, which conflicts with Django 4.2 
+# Pin to 5.4.x until Django 5.x upgrade is complete
+# Related: https://github.com/python-social-auth/social-app-django/releases
+social-auth-app-django<5.5.0
