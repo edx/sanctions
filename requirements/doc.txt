@@ -435,7 +435,7 @@ six==1.17.0
     #   python-dateutil
 snowballstemmer==3.0.1
     # via sphinx
-social-auth-app-django==5.5.1
+social-auth-app-django==5.4.3
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt

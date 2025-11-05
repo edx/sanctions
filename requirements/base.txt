@@ -172,7 +172,7 @@ six==1.17.0
     #   edx-django-release-util
     #   opsgenie-sdk
     #   python-dateutil
-social-auth-app-django==5.5.1
+social-auth-app-django==5.4.3
     # via
     #   -c requirements/constraints.txt
     #   edx-auth-backends
