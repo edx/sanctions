@@ -168,6 +168,8 @@ responses==0.25.8
     # via -r requirements/base.in
 semantic-version==2.10.0
     # via edx-drf-extensions
+setuptools==80.9.0
+    # via -r requirements/base.in
 simplejson==3.20.1
     # via django-rest-swagger
 six==1.17.0
@@ -205,5 +207,3 @@ urllib3==2.5.0
     #   requests
     #   responses
 
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools

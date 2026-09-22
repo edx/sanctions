@@ -10,3 +10,9 @@
 
 # Common constraints for edx repos
 -c common_constraints.txt
+
+# setuptools>=81 removed pkg_resources, which the abandoned coreapi package
+# (a dependency of django-rest-swagger) still imports. Pin below that until
+# django-rest-swagger is replaced.
+# https://setuptools.pypa.io/en/latest/pkg_resources.html
+setuptools<81

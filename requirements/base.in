@@ -19,4 +19,5 @@ opsgenie_sdk
 pycountry
 pytz
 responses
+setuptools    # Pinned via constraints.txt; coreapi (via django-rest-swagger) still needs pkg_resources
 testfixtures
