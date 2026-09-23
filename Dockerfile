@@ -3,6 +3,9 @@ MAINTAINER sre@edx.org
 
 # ENV variables for Python 3.12 support
 ARG PYTHON_VERSION=3.12
+# setuptools >= 81 drops pkg_resources, which coreapi (via django-rest-swagger)
+# still imports at Django startup. Pin below that.
+ARG SETUPTOOLS_VERSION=80.9.0
 # Translations are pulled from this repo at build time via atlas (OEP-58);
 # GoCD passes --build-arg OPENEDX_TRANSLATIONS_REPO=edx/openedx-translations
 ARG OPENEDX_TRANSLATIONS_REPO
@@ -59,7 +62,8 @@ ENV PATH="$VIRTUAL_ENV_DIR/bin:$PATH"
 
 RUN virtualenv -p python${PYTHON_VERSION} --always-copy ${VIRTUAL_ENV_DIR}
 
-RUN pip install --upgrade pip setuptools
+RUN pip install --upgrade pip
+RUN pip install setuptools==${SETUPTOOLS_VERSION}
 
 WORKDIR /edx/app/sanctions
 
