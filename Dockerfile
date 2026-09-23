@@ -1,8 +1,16 @@
-FROM ubuntu:focal as app
+FROM ubuntu:jammy as app
 MAINTAINER sre@edx.org
 
 # ENV variables for Python 3.12 support
 ARG PYTHON_VERSION=3.12
+# setuptools >= 81 drops pkg_resources, which coreapi (via django-rest-swagger)
+# still imports at Django startup. Pin below that.
+ARG SETUPTOOLS_VERSION=80.9.0
+# Translations are pulled from this repo at build time via atlas (OEP-58);
+# GoCD passes --build-arg OPENEDX_TRANSLATIONS_REPO=edx/openedx-translations
+ARG OPENEDX_TRANSLATIONS_REPO
+ENV ATLAS_OPTIONS="--repository=$OPENEDX_TRANSLATIONS_REPO"
+ENV DEBIAN_FRONTEND=noninteractive
 
 # software-properties-common is needed to setup Python 3.12 env
 RUN apt-get update && \
@@ -24,7 +32,9 @@ RUN apt-get install -qy \
 	curl \
 	python3-pip \
 	python${PYTHON_VERSION} \
-	python${PYTHON_VERSION}-dev
+	python${PYTHON_VERSION}-dev \
+	# gettext provides msgfmt, needed by compilemessages when pulling translations
+	gettext
 
 # need to use virtualenv pypi package with Python 3.12
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
@@ -52,7 +62,8 @@ ENV PATH="$VIRTUAL_ENV_DIR/bin:$PATH"
 
 RUN virtualenv -p python${PYTHON_VERSION} --always-copy ${VIRTUAL_ENV_DIR}
 
-RUN pip install --upgrade pip setuptools
+RUN pip install --upgrade pip
+RUN pip install setuptools==${SETUPTOOLS_VERSION}
 
 WORKDIR /edx/app/sanctions
 
@@ -64,16 +75,21 @@ RUN pip install -r requirements/production.txt
 
 RUN mkdir -p /edx/var/log
 
+# This line is after the requirements so that changes to the code will not
+# bust the image cache
+COPY . /edx/app/sanctions
+
+# Fetch and compile translations into the image (OEP-58 atlas pull).
+# Production settings open $SANCTIONS_CFG at import time, which does not
+# exist during the build, so use the test settings (base settings + sqlite).
+RUN DJANGO_SETTINGS_MODULE=sanctions.settings.test make pull_translations
+
 # Code is owned by root so it cannot be modified by the application user.
 # So we copy it before changing users.
 USER app
 
 # Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
 CMD gunicorn --workers=2 --name sanctions -c /edx/app/sanctions/sanctions/docker_gunicorn_configuration.py --log-file - --max-requests=1000 sanctions.wsgi:application
-
-# This line is after the requirements so that changes to the code will not
-# bust the image cache
-COPY . /edx/app/sanctions
 
 FROM app as devstack
 USER root

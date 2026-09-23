@@ -14,6 +14,7 @@ edx-django-release-util
 edx-drf-extensions
 edx-rest-api-client
 mysqlclient
+openedx-atlas
 opsgenie_sdk
 pycountry
 pytz
