@@ -13,10 +13,12 @@ Follow the `internationalization coding guidelines`_ in the edX Developer's Guid
 Updating Translations
 *********************
 This project uses `Transifex`_ to translate content. After new features are developed the translation source files
-should be pushed to Transifex. Our translation community will translate the content, after which we can retrieve the
-translations.
+should be pushed to Transifex. Our translation community will translate the content, after which translations are
+pulled from `edx/openedx-translations`_ via `atlas`_ (OEP-58).
 
 .. _Transifex: https://www.transifex.com/
+.. _edx/openedx-translations: https://github.com/edx/openedx-translations
+.. _atlas: https://github.com/openedx/openedx-atlas
 
 Pushing source translation files to Transifex requires access to the edx-platform. Request access from the Open Source
 Team if you will be pushing translation files. You should also `configure the Transifex client`_ if you have not done so
@@ -33,7 +35,7 @@ The `make` targets listed below can be used to push or pull translations.
     * - Target
       - Description
     * - pull_translations
-      - Pull translations from Transifex
+      - Pull translations from ``edx/openedx-translations`` via atlas (OEP-58)
     * - push_translations
       - Push source translation files to Transifex
 
