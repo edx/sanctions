@@ -114,6 +114,8 @@ markupsafe==3.0.2
     # via jinja2
 mysqlclient==2.2.7
     # via -r requirements/base.in
+openedx-atlas==0.7.1
+    # via -r requirements/base.in
 oauthlib==3.3.1
     # via
     #   requests-oauthlib
