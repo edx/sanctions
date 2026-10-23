@@ -14,5 +14,5 @@
 # coreapi (via django-rest-swagger) imports pkg_resources at Django startup.
 # setuptools 82 removed pkg_resources; its deprecation warning recommends
 # pinning setuptools<81. Remove once django-rest-swagger is replaced.
-# See https://2u-internal.atlassian.net/browse/LP-1405
+# See https://2u-internal.atlassian.net/browse/LP-1405 for unpinning.
 setuptools<81
