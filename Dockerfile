@@ -55,7 +55,7 @@ RUN virtualenv -p python${PYTHON_VERSION} --always-copy ${VIRTUAL_ENV_DIR}
 WORKDIR /edx/app/sanctions
 
 # pip/setuptools/wheel versions come from requirements/pip.txt
-# (see the setuptools constraint in requirements/constraints.txt).
+# (also respects requirements/constraints.txt).
 COPY requirements/pip.txt /edx/app/sanctions/requirements/pip.txt
 RUN pip install -r requirements/pip.txt
 
