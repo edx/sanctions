@@ -3,6 +3,8 @@ MAINTAINER sre@edx.org
 
 # ENV variables for Python 3.12 support
 ARG PYTHON_VERSION=3.12
+# Keep apt (e.g. tzdata) from prompting for input during the build.
+ARG DEBIAN_FRONTEND=noninteractive
 
 # software-properties-common is needed to setup Python 3.12 env
 RUN apt-get update && \
