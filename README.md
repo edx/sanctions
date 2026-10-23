@@ -31,20 +31,20 @@
 | sanctions/apps/sanctions/apps.py                                                                        |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/management/\_\_init\_\_.py                                                     |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/management/commands/\_\_init\_\_.py                                            |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py            |       57 |       10 |        8 |        1 |     83% |39-50, 84->89 |
+| sanctions/apps/sanctions/management/commands/populate\_sdn\_fallback\_data\_and\_metadata.py            |       57 |       10 |        8 |        1 |     83% |39-50, 84-\>89 |
 | sanctions/apps/sanctions/management/commands/tests/\_\_init\_\_.py                                      |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0001\_initial.py                                                    |       10 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0002\_rename\_fallback\_models.py                                   |        5 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0003\_auto\_20231109\_2121.py                                       |        4 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/0004\_alter\_historicalsanctionscheckfailure\_options\_and\_more.py |        4 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/migrations/\_\_init\_\_.py                                                     |        0 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/models.py                                                                      |       86 |        3 |       10 |        3 |     94% |106->116, 107-112, 170->172 |
+| sanctions/apps/sanctions/models.py                                                                      |       86 |        3 |       10 |        3 |     94% |106-\>116, 107-112, 170-\>172 |
 | sanctions/apps/sanctions/tests/\_\_init\_\_.py                                                          |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/apps/sanctions/tests/factories.py                                                             |       21 |        0 |        0 |        0 |    100% |           |
-| sanctions/apps/sanctions/utils.py                                                                       |       66 |       12 |       14 |        4 |     75% |33-50, 88, 114->119, 124-125, 190->197 |
+| sanctions/apps/sanctions/utils.py                                                                       |       66 |       12 |       14 |        4 |     75% |33-50, 88, 114-\>119, 124-125, 190-\>197 |
 | sanctions/apps/sanctions/views.py                                                                       |        0 |        0 |        0 |        0 |    100% |           |
 | sanctions/urls.py                                                                                       |       10 |        0 |        0 |        0 |    100% |           |
-|                                                                                               **TOTAL** |  **448** |   **28** |   **48** |    **9** | **92%** |           |
+| **TOTAL**                                                                                               |  **448** |   **28** |   **48** |    **9** | **92%** |           |
 
 
 ## Setup coverage badge
