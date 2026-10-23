@@ -61,3 +61,19 @@ jobs:
           name: python-coverage-comment-action
           # If you use a different name, update COMMENT_FILENAME accordingly
           path: python-coverage-comment-action.txt
+
+  docker:
+    # Intentionally mirrors the production GoCD sanctions-build pipeline (edx-internal),
+    # which runs a plain `docker build ./sanctions` with no --target. Do not switch this to
+    # `make github_docker_build` (which uses --target app) without changing GoCD too.
+    name: docker build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build . -f Dockerfile -t sanctions:ci
+
+      - name: Smoke test mysqlclient
+        # Unit tests use sqlite, so this is the only check that mysqlclient links in the image.
+        run: docker run --rm sanctions:ci python -c "import MySQLdb"
