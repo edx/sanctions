@@ -1,4 +1,4 @@
-FROM ubuntu:focal as app
+FROM ubuntu:jammy as app
 MAINTAINER sre@edx.org
 
 # ENV variables for Python 3.12 support
@@ -78,6 +78,9 @@ CMD gunicorn --workers=2 --name sanctions -c /edx/app/sanctions/sanctions/docker
 # bust the image cache
 COPY . /edx/app/sanctions
 
+# TODO: GoCD builds this (last) stage because its docker build has no --target, so
+# production images include requirements/dev.txt. Fix by adding --target app in the
+# sanctions-build pipeline (edx-internal) or by making app the last stage.
 FROM app as devstack
 USER root
 COPY requirements/dev.txt /edx/app/sanctions/requirements/dev.txt
