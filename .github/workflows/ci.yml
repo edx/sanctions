@@ -64,8 +64,8 @@ jobs:
 
   docker:
     # Intentionally mirrors the production GoCD sanctions-build pipeline (edx-internal),
-    # which runs a plain `docker build ./sanctions` with no --target. Do not switch this to
-    # `make github_docker_build` (which uses --target app) without changing GoCD too.
+    # which runs a plain `docker build ./sanctions` with no --target. Do not add --target app
+    # here without changing GoCD too.
     name: docker build
     runs-on: ubuntu-latest
     steps:

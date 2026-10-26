@@ -184,18 +184,5 @@ db-shell: # Run the app shell as root, enter the app's database
 %-attach:
 	docker attach sanctions.$*
 
-github_docker_build:
-	docker build . -f Dockerfile --target app -t openedx/sanctions
-
-github_docker_tag: github_docker_build
-	docker tag openedx/sanctions openedx/sanctions:${GITHUB_SHA}
-
-github_docker_auth:
-	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
-
-github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
-	docker push 'openedx/sanctions:latest'
-	docker push "openedx/sanctions:${GITHUB_SHA}"
-
 selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."
