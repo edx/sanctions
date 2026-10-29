@@ -64,15 +64,15 @@ jobs:
 
   docker:
     # Intentionally mirrors the production GoCD sanctions-build pipeline (edx-internal),
-    # which runs a plain `docker build ./sanctions` with no --target. Do not add --target app
-    # here without changing GoCD too.
+    # which builds with --target app. Keep this in sync with build_target for sanctions in
+    # edx-internal's gocd/generated-pipelines/idas-inputs.yaml.
     name: docker build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build . -f Dockerfile -t sanctions:ci
+        run: docker build . -f Dockerfile --target app -t sanctions:ci
 
       - name: Smoke test mysqlclient
         # Unit tests use sqlite, so this is the only check that mysqlclient links in the image.

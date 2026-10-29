@@ -92,9 +92,9 @@ USER app
 # Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
 CMD gunicorn --workers=2 --name sanctions -c /edx/app/sanctions/sanctions/docker_gunicorn_configuration.py --log-file - --max-requests=1000 sanctions.wsgi:application
 
-# TODO: GoCD builds this (last) stage because its docker build has no --target, so
-# production images include requirements/dev.txt. Fix by adding --target app in the
-# sanctions-build pipeline (edx-internal) or by making app the last stage.
+# Note: a build with no --target builds this last stage (devstack), which adds
+# requirements/dev.txt. Production builds pass --target app (build_target in
+# edx-internal's gocd/generated-pipelines/idas-inputs.yaml).
 FROM app as devstack
 USER root
 COPY requirements/dev.txt /edx/app/sanctions/requirements/dev.txt
